@@ -4,23 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo - principio I </title>
-    <link rel="stylesheet" href="style.css">x
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="hero">
         <h1>Ejemplo I</h1>
         <p>Interface Segregation Principle</p>
     </section>
-    <section class="ejemplo codigo">
+    
+    <section class="ejemplo">
+        <!-- SECCIÓN DE CÓDIGO MALO -->
         <div class="mal">
             <h2> codigo mal hecho </h2>
-            <pre><code>aqui va el codigo malo</code></pre>
+            <pre><code>
+&lt;!-- ERROR: Etiqueta div no cierra, comillas faltantes y falta de semántica --&gt;
+&lt;div class=contenedor-error
+    &lt;div&gt;Título de la página (No es H1)&lt;/div&gt;
+    &lt;p&gt;Este texto no tiene etiqueta de cierre.
+
+&lt;!-- VIOLACIÓN DE SOLID (Interface Segregation) --&gt;
+interface IAve {
+    void volar();
+    void nadar();
+    void comer();
+}
+
+// MAL: El Avestruz se ve obligada a implementar volar() aunque no vuela
+class Avestruz implements IAve {
+    public void volar() { /* Error: No puedo volar */ }
+    public void nadar() { /* ... */ }
+    public void comer() { /* ... */ }
+}
+            </code></pre>
         </div>
+
+        <!-- SECCIÓN DE CÓDIGO BUENO -->
         <div class="bien">
             <h2> codigo bien hecho </h2>
-            <pre><code>aqui va el codigo bueno</code></pre>
+            <pre><code>
+&lt;!-- CORRECCIÓN: Etiquetas cerradas, comillas y semántica correcta --&gt;
+&lt;header class="contenedor-ok"&gt;
+    &lt;h1&gt;Título de la página&lt;/h1&gt;
+    &lt;p&gt;Este texto sí está bien estructurado.&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;!-- CUMPLIMIENTO DE SOLID (Interface Segregation) --&gt;
+interface IVolador { void volar(); }
+interface INadador { void nadar(); }
+interface IComedor { void comer(); }
+
+// BIEN: El Avestruz solo implementa lo que realmente hace
+class Avestruz implements INadador, IComedor {
+    public void nadar() { /* ... */ }
+    public void comer() { /* ... */ }
+}
+            </code></pre>
         </div>
     </section>
+
     <section>
         <div class="Volver">
             <a href="SOLID.html">← Volver a pagina principal</a>

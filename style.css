@@ -9,6 +9,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
 body{
     background: #f5f5f5;
 }
@@ -144,7 +146,7 @@ header {
 
     .menu .navbar{
         position: absolute;
-        top: 60px;
+        top: 60px;  
         left: 0;
         right: 0;
         background: #9249af;
@@ -168,4 +170,53 @@ header {
     .header-content img{
         width: 250px;
     }
+    
 }
+
+.hero{
+    background:linear-gradient(135deg, #9249af, #5f2c82);
+    padding: 40px 10px;
+    text-align: center;
+    color: white;
+}
+
+/* TEXTO */
+.hero h1{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero p{
+    font-size: 16px;
+    color: #dcdcdc;
+    margin-bottom: 20px;
+}
+.ejemplo{
+    background: #dcdcdc;
+
+}
+.mal{
+    border-top: 5px solid #ff4d4d;
+}
+
+.mal h2{
+    color: #ff0000;
+    text-align: center;
+}     
+pre {
+  text-align: center;
+  background-color: #f4f4f400;
+  padding: 15px;
+}
+
+.bien{
+    border-top: 5px solid #00c853;
+}
+
+.bien h2{
+    color: #00c853;
+    text-align: center;
+}
+
+
