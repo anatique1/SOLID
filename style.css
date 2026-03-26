@@ -15,12 +15,11 @@ body{
     background: #f5f5f5;
 }
 
-/* HEADER */
-header{
+header {
     background-image: url("./imagenes/hero.svg");
-    background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
+    background-size: cover;
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -39,24 +38,24 @@ header{
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     z-index: 1000;
 }
 .menu .logo{
-    font-size: 25px;
     font-weight: 700;
-    color:white;
+    font-size: 25px;
+    color:#ffffff;
 }
 
-.menu.navbar ul li{
+.menu.navbar ul li {
     position: relative;
     float: left;
     }
-.menu.navbar ul li a{
+.menu.navbar ul li a {
     font-size: 18px;
-    color: white;
     padding: 20px;
+    color: white;
     display: block;
 }
 
@@ -72,4 +71,25 @@ header{
 }
 .menu label {
     cursor: pointer;
+    display: none;
+}
+.header-content{
+    display: flex;
+ }
+.content {
+    padding: 150px 150px 0 150px;
+}
+.content h1{
+    font-size: 55px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 55px;
+}
+.content p{
+    margin-top: 25px ;
+    color: #aab1ff;
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 40px;
 }
