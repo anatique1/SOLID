@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Errores ISP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Errores y malas implementaciones del principio ISP</h1>
+
+    <h3>Error 1: Interfaces muy grandes</h3>
+    <p>
+        Cuando una interfaz tiene muchos metodos, algunas clases se ven obligadas
+        a usar cosas que no necesitan.
+    </p>
+
+    <p><b>Codigo incorrecto:</b></p>
+    <pre>
+class Trabajador:
+    def trabajar(self):
+        pass
+    
+    def comer(self):
+        pass
+
+class Robot(Trabajador):
+    def trabajar(self):
+        print("Robot trabajando")
+
+    def comer(self):
+        pass
+    </pre>
+
+    <p><b>Forma correcta:</b></p>
+    <pre>
+class Trabajador:
+    def trabajar(self):
+        pass
+
+class Robot(Trabajador):
+    def trabajar(self):
+        print("Robot trabajando")
+    </pre>
+
+    <h3>Error 2: Metodos que no se usan</h3>
+    <p>
+        Algunas clases tienen metodos que no usan, lo que hace el codigo mas confuso.
+    </p>
+
+    <p><b>Codigo incorrecto:</b></p>
+    <pre>
+class Dispositivo:
+    def imprimir(self):
+        pass
+
+    def escanear(self):
+        pass
+
+class Impresora:
+    def imprimir(self):
+        print("Imprimiendo")
+
+    def escanear(self):
+        pass
+    </pre>
+
+    <p><b>Forma correcta:</b></p>
+    <pre>
+class Impresora:
+    def imprimir(self):
+        print("Imprimiendo")
+    </pre>
+
+    <h3>Error 3: Dependencias innecesarias</h3>
+    <p>
+        Una clase usa mas cosas de las que realmente necesita.
+    </p>
+
+    <p><b>Codigo incorrecto:</b></p>
+    <pre>
+class Multifuncional:
+    def imprimir(self):
+        pass
+    
+    def escanear(self):
+        pass
+
+class Usuario:
+    def usar(self, maquina):
+        maquina.imprimir()
+    </pre>
+
+    <p><b>Forma correcta:</b></p>
+    <pre>
+class Impresora:
+    def imprimir(self):
+        pass
+
+class Usuario:
+    def usar(self, impresora):
+        impresora.imprimir()
+    </pre>
+
+    <h2>Conclusion</h2>
+    <p>
+        El error mas comun es crear interfaces muy grandes y obligar a las clases
+        a implementar metodos que no necesitan. Lo mejor es dividir las interfaces.
+    </p>
+
+    <section>
+        <div class="Volver">
+            <a href="SOLID.html">← Volver a pagina principal</a>
+        </div>
+    </section>
+
+</body>
+</html>
