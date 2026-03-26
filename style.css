@@ -18,8 +18,8 @@ body{
 /* HEADER */
 header{
     background-image: url("./imagenes/hero.svg");
-    background-size: cover;
-    background-position: center bottom;
+    background-size: 100%;
+    background-position: right top;    
     background-repeat: no-repeat;
     min-height: 70vh;
     display: flex;
@@ -72,4 +72,21 @@ header{
 }
 .menu label {
     cursor: pointer;
+}
+
+.hero {
+    background-color: #9249af;
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #a0a0c0;
 }
