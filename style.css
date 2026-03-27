@@ -177,10 +177,8 @@ header {
     background:linear-gradient(135deg, #9249af, #5f2c82);
     padding: 40px 10px;
     text-align: center;
-    color: white;
+    
 }
-
-/* TEXTO */
 .hero h1{
     font-size: 40px;
     color: white;
@@ -192,6 +190,8 @@ header {
     color: #dcdcdc;
     margin-bottom: 20px;
 }
+
+/* CSS PARA LOS EJEMPLOS*/
 .ejemplo{
     background: #dcdcdc;
 
@@ -204,11 +204,19 @@ header {
     color: #ff0000;
     text-align: center;
 }     
+
 pre {
-  text-align: center;
-  background-color: #f4f4f400;
+  background-color: #cb9eff; 
   padding: 15px;
-}
+  width: 50%;                
+  max-width: 600px;          
+  margin: 0 auto;            
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;  
+
+}   
+
 
 .bien{
     border-top: 5px solid #00c853;
@@ -219,4 +227,29 @@ pre {
     text-align: center;
 }
 
+/* CSS PARA LOS ERRORES*/
 
+.cabezaErrores{
+    background:linear-gradient(135deg, #9249af, #5f2c82);
+    padding: 40px 10px;
+    text-align: center;
+}
+.cabezaErrores h1{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 10px;
+}
+.cabezaErrores p{
+    font-size: 16px;
+    color: #dcdcdc;
+    margin-bottom: 20px;
+}
+
+.error1{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    border-top: 5px solid #ff4d4d;
+}

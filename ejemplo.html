@@ -16,48 +16,34 @@
         <!-- SECCIÓN DE CÓDIGO MALO -->
         <div class="mal">
             <h2> codigo mal hecho </h2>
-            <pre><code>
-&lt;!-- ERROR: Etiqueta div no cierra, comillas faltantes y falta de semántica --&gt;
-&lt;div class=contenedor-error
-    &lt;div&gt;Título de la página (No es H1)&lt;/div&gt;
-    &lt;p&gt;Este texto no tiene etiqueta de cierre.
+            <pre><code> 
+                class IAnimal(ABC):
+                    @abstractmethod
+                    def volar(self): pass
 
-&lt;!-- VIOLACIÓN DE SOLID (Interface Segregation) --&gt;
-interface IAve {
-    void volar();
-    void nadar();
-    void comer();
-}
+                    @abstractmethod
+                    def nadar(self): pass
 
-// MAL: El Avestruz se ve obligada a implementar volar() aunque no vuela
-class Avestruz implements IAve {
-    public void volar() { /* Error: No puedo volar */ }
-    public void nadar() { /* ... */ }
-    public void comer() { /* ... */ }
-}
-            </code></pre>
+                    @abstractmethod
+                    def correr(self): pass
+        </code></pre>
         </div>
 
         <!-- SECCIÓN DE CÓDIGO BUENO -->
         <div class="bien">
             <h2> codigo bien hecho </h2>
             <pre><code>
-&lt;!-- CORRECCIÓN: Etiquetas cerradas, comillas y semántica correcta --&gt;
-&lt;header class="contenedor-ok"&gt;
-    &lt;h1&gt;Título de la página&lt;/h1&gt;
-    &lt;p&gt;Este texto sí está bien estructurado.&lt;/p&gt;
-&lt;/header&gt;
+                class IVolador(ABC):
+                    @abstractmethod
+                    def volar(self): pass
 
-&lt;!-- CUMPLIMIENTO DE SOLID (Interface Segregation) --&gt;
-interface IVolador { void volar(); }
-interface INadador { void nadar(); }
-interface IComedor { void comer(); }
+                class INavegador(ABC):
+                    @abstractmethod
+                    def nadar(self): pass
 
-// BIEN: El Avestruz solo implementa lo que realmente hace
-class Avestruz implements INadador, IComedor {
-    public void nadar() { /* ... */ }
-    public void comer() { /* ... */ }
-}
+                class iCorredor(ABC):
+                    @abstractmethod
+                    def correr(self): pass
             </code></pre>
         </div>
     </section>
